@@ -24,6 +24,15 @@
       commit.gpgsign = true;
     };
   };
+  programs.tmux = {
+    enable = true;
+    baseIndex = 1;
+    mouse = true;
+    historyLimit = 50000;
+    sensibleOnTop = false;
+    terminal = "alacritty";
+    extraConfig = builtins.readFile ./tmux.conf;
+  };
   home.packages = with pkgs; [
     # C++
     cmake
@@ -52,7 +61,6 @@
     netcat-gnu
     ranger
     ripgrep
-    tmux
 
     # apps
     aria2
