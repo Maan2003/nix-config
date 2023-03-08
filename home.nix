@@ -54,12 +54,10 @@
     fzf
     jq
     github-cli
-    glow
     htop
     httpie
     nmap
     netcat-gnu
-    ranger
     ripgrep
 
     # apps
