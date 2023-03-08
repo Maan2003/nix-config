@@ -17,13 +17,9 @@ let
     '';
 in {
   fonts.fontconfig.enable = true;
-  programs.firefox = {
-    enable = false; # TODO: figure out legacy fox
-  };
   home.packages = with pkgs; [
     # gui
     feh
-    (nixGlWrap alacritty)
     (nixGlWrap sioyek)
     (nixGlWrap chromium)
     (nixGlWrap mpv)
@@ -32,4 +28,48 @@ in {
     agave
     roboto-mono
   ];
+  programs.firefox = {
+    enable = false; # TODO: figure out legacy fox
+  };
+  programs.alacritty = {
+    enable = true;
+    package = (nixGlWrap pkgs.alacritty);
+    settings = {
+      font = {
+        size = 12;
+        normal.family = "Roboto Mono";
+      };
+      shell = "tmux";
+      colors = {
+        primary = {
+          foreground = "#BBBBBB";
+          background = "#191919";
+        };
+        cursor = {
+          cursor = "#C9C9C9";
+          text = "#191919";
+        };
+        normal = {
+          black = "#191919";
+          red = "#DE6E7C";
+          green = "#819B69";
+          yellow = "#B77E64";
+          blue = "#6099C0";
+          magenta = "#B279A7";
+          cyan = "#66A5AD";
+          white = "#BBBBBB";
+        };
+        bright = {
+          black = "#3D3839";
+          red = "#E8838F";
+          green = "#8BAE68";
+          yellow = "#D68C67";
+          blue = "#61ABDA";
+          magenta = "#CF86C1";
+          cyan = "#65B8C1";
+          white = "#8E8E8E";
+        };
+      };
+    };
+  };
 }
