@@ -5,6 +5,18 @@
         (oldAttrs: rec { meta = oldAttrs.meta // { priority = 15; }; });
     })
   ];
+  nix.registry.nixpkgs = {
+    from = {
+      id = "nixpkgs";
+      type = "indirect";
+    };
+    to = {
+      type = "github";
+      owner = "NixOS";
+      repo = "nixpkgs";
+      rev = "c707238dc262923da5a53a5a11914117caac07a2";
+    };
+  };
   programs.home-manager.enable = true;
   programs.neovim = {
     enable = true;
