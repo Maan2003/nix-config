@@ -6,10 +6,14 @@ mcd()
     cd "$1"
 }
 
-, () {
+r () {
   NAME="$1"
-  shift 1
-  nix run "nixpkgs#$NAME" "$@"
+  shift 1 && nix run "nixpkgs#$NAME" "$@"
+}
+
+s () {
+  ARGS=("$@")
+  nix shell ${ARGS[@]/#/nixpkgs#}
 }
 
 typeset -A ZSH_HIGHLIGHT_STYLES
