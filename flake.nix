@@ -23,7 +23,8 @@
         inherit pkgs;
         modules = [
           ./home.nix
-          plasma-manager.homeManagerModules.plasma-manager
+          ./gui.nix
+          ./x11.nix
           {
             home = {
               stateVersion = "22.11";
