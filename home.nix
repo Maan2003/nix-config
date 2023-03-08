@@ -34,14 +34,14 @@
     shell = "${pkgs.zsh}/bin/zsh";
     extraConfig = builtins.readFile ./tmux.conf;
   };
-  # provide zsh completion
-  # environment.pathsToLink = [ "/share/zsh" ];
   programs.zsh = {
     enable = true;
     enableSyntaxHighlighting = true;
     autocd = true;
-    historySubstringSearch.enable = true;
-    initExtra = builtins.readFile ./zshrc;
+    # historySubstringSearch.enable = true;
+    oh-my-zsh.enable = true;
+    history.expireDuplicatesFirst = true;
+    initExtraFirst = builtins.readFile ./zshrc;
   };
   programs.direnv = {
     enable = true;
