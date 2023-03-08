@@ -31,7 +31,26 @@
     historyLimit = 50000;
     sensibleOnTop = false;
     terminal = "alacritty";
+    shell = "${pkgs.zsh}/bin/zsh";
     extraConfig = builtins.readFile ./tmux.conf;
+  };
+  # provide zsh completion
+  # environment.pathsToLink = [ "/share/zsh" ];
+  programs.zsh = {
+    enable = true;
+    enableSyntaxHighlighting = true;
+    autocd = true;
+    historySubstringSearch.enable = true;
+    initExtra = builtins.readFile ./zshrc;
+  };
+  programs.direnv = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+    options = [ "--cmd cd" ];
   };
   home.packages = with pkgs; [
     # C++
