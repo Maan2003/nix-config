@@ -22,9 +22,12 @@
     dawnTime = "6:00-7:45";
   };
 
-  home.packages = with pkgs;
-    [
-      # wm
-      i3
-    ];
+  home.packages = with pkgs; [
+    # wm
+    i3
+
+    # controllers
+    brightnessctl
+    wmctrl
+  ];
 }
