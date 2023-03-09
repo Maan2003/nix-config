@@ -10,8 +10,12 @@
   xsession = {
     enable = true;
     scriptPath = ".xsession-hm";
-    windowManager.command = "i3";
     importedVariables = [ "XCURSOR_PATH" ];
+  };
+  xsession.windowManager.i3 = {
+    enable = true;
+    config = null;
+    extraConfig = builtins.readFile ./i3.conf;
   };
 
   services.redshift = {
