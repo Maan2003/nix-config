@@ -8,7 +8,7 @@ mcd()
 
 r () {
   NAME="$1"
-  shift 1 && nix run "nixpkgs#$NAME" "$@"
+  shift 1 && nix run "nixpkgs#$NAME" -- "$@"
 }
 
 s () {
