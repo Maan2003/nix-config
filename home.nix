@@ -20,10 +20,12 @@
   programs.home-manager.enable = true;
   programs.neovim = {
     enable = true;
+    defaultEditor = true;
     vimAlias = true;
     viAlias = true;
     vimdiffAlias = true;
   };
+  home.file.".config/nvim".source = ./nvim;
   programs.git = {
     enable = true;
     userName = "Maan2003";
