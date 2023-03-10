@@ -1,17 +1,14 @@
 {
-  description = "Plasma Manager Example";
+  description = "My nix environment";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nixgl.url = "github:guibou/nixGL";
     nixgl.inputs.nixpkgs.follows = "nixpkgs";
-    plasma-manager.url = "github:pjones/plasma-manager";
-    plasma-manager.inputs.nixpkgs.follows = "nixpkgs";
-    plasma-manager.inputs.home-manager.follows = "home-manager";
   };
 
-  outputs = { nixpkgs, nixgl, home-manager, plasma-manager, ... }@inputs:
+  outputs = { nixpkgs, nixgl, home-manager, ... }@inputs:
     let
       system = "x86_64-linux";
       username = "manmeet";
