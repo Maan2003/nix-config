@@ -1,0 +1,7 @@
+- [x] nvim
+- [x] i3
+- [x] alacritty
+- [x] tmux
+- [x] zsh
+- [ ] firefox
+- [ ] i3 scripts
