@@ -25,7 +25,7 @@
     viAlias = true;
     vimdiffAlias = true;
   };
-  home.file.".config/nvim".source = ./nvim;
+  xdg.configFile.nvim.source = ./nvim;
   programs.git = {
     enable = true;
     userName = "Maan2003";
