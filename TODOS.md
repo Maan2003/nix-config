@@ -4,4 +4,3 @@
 - [x] tmux
 - [x] zsh
 - [ ] firefox
-- [ ] i3 scripts
