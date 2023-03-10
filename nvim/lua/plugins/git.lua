@@ -1,6 +1,21 @@
 return {
    -- 'tpope/vim-fugitive',
-   'sindrets/diffview.nvim',
+   {
+      'sindrets/diffview.nvim',
+      opts = {
+         enhanced_diff_hl = true,
+         view = {
+            merge_tool = {
+               layout = "diff4_mixed",
+            },
+         },
+         win_config = {
+            win_opts = {
+               signcolumn = "no",
+            },
+         },
+      },
+   },
    {
       'lewis6991/gitsigns.nvim',
       opts = {},
