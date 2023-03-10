@@ -161,15 +161,15 @@ bindsym $mod1+Shift+9 move container to workspace number $ws9
 bindsym $mod1+Shift+0 move container to workspace number $ws10
 
 # dynamic workspace bindings
-bindsym $mod1+Shift+j exec ~/bins/ws-save.sh n
-bindsym $mod1+Shift+k exec ~/bins/ws-save.sh e
-bindsym $mod1+Shift+l exec ~/bins/ws-save.sh i
+bindsym $mod1+Shift+j exec ~/.config/i3/ws-save.sh n
+bindsym $mod1+Shift+k exec ~/.config/i3/ws-save.sh e
+bindsym $mod1+Shift+l exec ~/.config/i3/ws-save.sh i
 # bindsym $mod1+Shift+; exec ws-save.sh o
 # well F13, F14, F15, F16, F17 but x11
-bindsym XF86Tools exec ~/bins/ws-go.sh n
-bindsym XF86Launch5 exec ~/bins/ws-go.sh e
-bindsym XF86Launch6 exec ~/bins/ws-go.sh i
-bindsym XF86Launch7 exec ~/bins/ws-go.sh o
+bindsym XF86Tools exec ~/.config/i3/ws-go.sh n
+bindsym XF86Launch5 exec ~/.config/i3/ws-go.sh e
+bindsym XF86Launch6 exec ~/.config/i3/ws-go.sh i
+bindsym XF86Launch7 exec ~/.config/i3/ws-go.sh o
 
 
 bindsym mod2+KP_Enter workspace back_and_forth

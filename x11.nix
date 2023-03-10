@@ -15,8 +15,10 @@
   xsession.windowManager.i3 = {
     enable = true;
     config = null;
-    extraConfig = builtins.readFile ./i3.conf;
+    extraConfig = builtins.readFile ./i3/config;
   };
+  home.file.".config/i3/ws-go.sh".source = ./i3/ws-go.sh;
+  home.file.".config/i3/ws-save.sh".source = ./i3/ws-save.sh;
 
   services.redshift = {
     enable = true;
@@ -27,9 +29,6 @@
   };
 
   home.packages = with pkgs; [
-    # wm
-    i3
-
     # controllers
     brightnessctl
     wmctrl
