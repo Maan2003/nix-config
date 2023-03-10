@@ -23,6 +23,7 @@ in {
     (nixGlWrap sioyek)
     (nixGlWrap chromium)
     (nixGlWrap mpv)
+    (nixGlWrap signal-desktop)
 
     # fonts
     agave
