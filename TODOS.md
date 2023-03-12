@@ -3,4 +3,5 @@
 - [x] alacritty
 - [x] tmux
 - [x] zsh
+- [x] emacs
 - [ ] firefox
