@@ -1,0 +1,281 @@
+/*
+#nav-bar:focus-within toolbarbutton { display: none !important; }
+#nav-bar:focus-within .chromeclass-toolbar-additional { display: none !important; }
+*/
+#urlbar-container:focus-within #tracking-protection-icon-container,
+#urlbar-container:focus-within #page-action-buttons {
+  display: none !important;
+}
+
+#urlbar-container:focus-within {
+  display: flex !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  background: transparent !important;
+  margin: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 2 !important;
+  padding: 0 !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+#urlbar:focus-within[open] > .urlbarView {
+  display: block !important;
+  margin-top: 20px;
+  border-radius: 5px !important;
+  box-shadow: 0 3px 30px #222;
+  padding: 5px 10px !important;
+  min-width: 100% !important;
+  margin-left: 0px !important;
+  background: #191919 !important;
+}
+
+.urlbarView > .search-one-offs {
+  border-top: none !important;
+}
+
+#urlbar[open] > .urlbarView > .urlbarView-body-outer > .urlbarView-body-inner {
+  border-top: none !important;
+}
+
+#urlbar:focus-within .urlbar-input-box {
+  padding: 10px !important;
+}
+
+#urlbar:focus-within {
+  flex: 0 !important;
+  top: 50px !important;
+  left: 0 !important;
+  box-shadow: 0 3px 30px #222;
+  border: 2px solid !important;
+  border-radius: 5px;
+  background: #191919 !important;
+  position: relative !important;
+  /* display: block !important; */
+  width: 90% !important;
+  min-height: 48px !important;
+  max-width: 800px !important;
+}
+
+#urlbar:focus-within[breakout][breakout-extend] > #urlbar-input-container {
+  height: auto !important;
+  padding-block: unset !important;
+  padding-inline: unset !important;
+}
+
+/**/
+/* #urlbar-container:focus-within { */
+/*     display: flex !important; */
+/*     position: fixed !important; */
+/*     top: 0 !important; */
+/*     left: 0 !important; */
+/*     background: rgba(28, 27, 34, 0.9) !important; */
+/*     margin: 0 !important; */
+/*     width: 100% !important; */
+/*     height: 100% !important; */
+/*     z-index: 99999 !important; */
+/*     padding: 0 !important; */
+/*     flex-direction: column !important; */
+/*     align-items: center !important; */
+/* } */
+/**/
+/* #urlbar:focus-within{ */
+/*     flex: 0 !important; */
+/*     margin-top: 50px !important; */
+/*     position: relative !important; */
+/*     display: block !important; */
+/*     width: 90% !important; */
+/*     max-width: 800px !important; */
+/*     max-height: 90% !important; */
+/* } */
+
+#urlbar-container:focus-within #urlbar-background {
+  display: none !important;
+}
+#urlbar-container:focus-within #urlbar-go-button,
+#urlbar-container:focus-within #identity-box {
+  display: none !important;
+}
+#urlbar-container {
+  --urlbar-container-height: 33px !important;
+}
+.urlbarView-url {
+  color: #bbb !important;
+}
+* {
+    font-family: Agave !important;
+}
+.search-wrapper {
+    visibility: collapse !important;
+}
+#TabsToolbar{ visibility: collapse !important }
+#sidebar-header, #sidebar-splitter { display: none }
+
+#sidebar-box{
+  --uc-sidebar-width: 32px;
+  --uc-sidebar-hover-width: 180px;
+  --uc-autohide-sidebar-delay: 100ms; /* Wait 0.6s before hiding sidebar */
+  --uc-autoshow-sidebar-delay: 600ms; /* Wait 0.6s before hiding sidebar */
+  position: relative;
+  min-width: var(--uc-sidebar-width) !important;
+  width: var(--uc-sidebar-width) !important;
+  max-width: var(--uc-sidebar-width) !important;
+  z-index:1;
+}
+
+#sidebar-box[positionend]{ direction: rtl }
+#sidebar-box[positionend] > *{ direction: ltr }
+
+#sidebar-box[positionend]:-moz-locale-dir(rtl){ direction: ltr }
+#sidebar-box[positionend]:-moz-locale-dir(rtl) > *{ direction: rtl }
+
+#main-window[sizemode="fullscreen"] #sidebar-box{ --uc-sidebar-width: 1px; }
+
+#sidebar-splitter{ display: none }
+
+#sidebar-header{ overflow: hidden; color: var(--chrome-color, inherit) !important}
+
+#sidebar{
+  transition: min-width 200ms linear var(--uc-autoshow-sidebar-delay) !important;
+  min-width: var(--uc-sidebar-width) !important;
+  will-change: min-width;
+}
+
+#sidebar-box:hover > #sidebar, #sidebar-box.sidebar-selected > #sidebar { 
+  min-width: var(--uc-sidebar-hover-width) !important; 
+  transition: min-width 200ms linear var(--uc-autohide-sidebar-delay) !important;
+}
+
+.sidebar-panel{
+  background-color: transparent !important;
+  color: var(--newtab-text-primary-color) !important;
+}
+
+.sidebar-panel #search-box{
+  -moz-appearance: none !important;
+  background-color: rgba(249,249,250,0.1) !important; 
+  color: inherit !important;
+}
+
+/* Add sidebar divider and give it background */
+#sidebar,
+#sidebar-header{
+  background-color: #333 !important;
+  border-inline: 1px solid #282828;
+  border-inline-width: 0px 1px;
+}
+
+#sidebar-box:not([positionend]) > :-moz-locale-dir(rtl),
+#sidebar-box[positionend] > *{
+  border-inline-width: 1px 0px;
+}
+
+/* Move statuspanel to the other side when sidebar is hovered so it doesn't get covered by sidebar */
+
+#sidebar-box:not([positionend]):hover ~ #appcontent #statuspanel{ inset-inline: auto 0px !important; }
+#sidebar-box:not([positionend]):hover ~ #appcontent #statuspanel-label{ margin-inline: 0px !important; border-left-style: solid !important; }
+:root {
+  min-width: 0 !important;
+}
+
+#navigator-toolbox{
+  /* position: fixed !important; */
+  display: block;
+  background-color: var(--lwt-frame,black) !important;
+  transition: 200ms margin-top linear !important;
+  transition-delay: 0 !important;
+  line-height: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+#navigator-toolbox:not([vim_visible]) {
+  margin-top: -33px !important;
+}
+
+
+/* #mainPopupSet:hover ~ box > toolbox, */
+/* Uncomment the above line to make toolbar visible if some popup is hovered
+/*#navigator-toolbox:focus-within,/
+#navigator-toolbox:hover:not(:focus-within)
+{
+  transition: 200ms margin-top linear !important;
+  margin-top: 0;
+  opacity: 1;
+}*/
+
+#navigator-toolbox > *{ line-height: normal; pointer-events: auto }
+
+#navigator-toolbox,
+#navigator-toolbox > *{
+  width: 100vw;
+  -moz-appearance: none !important;
+}
+
+/* These two exist for oneliner compatibility */
+#nav-bar{ width: var(--uc-navigationbar-width,100vw) }
+#TabsToolbar{ width: calc(100vw - var(--uc-navigationbar-width,0px)) }
+
+/* Don't apply transform before window has been fully created */
+:root:not([sessionrestored]) #navigator-toolbox{ transform:none !important }
+
+:root[customizing] #navigator-toolbox{
+  position: relative !important;
+  transform: none !important;
+  opacity: 1 !important;
+}
+
+#navigator-toolbox[inFullscreen] > #PersonalToolbar,
+#PersonalToolbar[collapsed="true"]{ display: none }
+
+
+:root[tabsintitlebar]{ --uc-toolbar-height: 40px; }
+:root[tabsintitlebar][uidensity="compact"]{ --uc-toolbar-height: 32px }
+
+:root[sizemode="fullscreen"] #TabsToolbar > :is(#window-controls,.titlebar-buttonbox-container){
+  visibility: visible !important;
+  z-index: 2;
+}
+
+:root:not([inFullscreen]) #nav-bar{
+  margin-top: calc(0px - var(--uc-toolbar-height,0px));
+}
+
+:root[tabsintitlebar] #toolbar-menubar[autohide="true"]{
+  min-height: unset !important;
+  height: var(--uc-toolbar-height,0px) !important;
+  position: relative;
+}
+
+#toolbar-menubar[autohide="false"]{
+  margin-bottom: var(--uc-toolbar-height,0px)
+}
+
+:root[tabsintitlebar] #toolbar-menubar[autohide="true"] #main-menubar{
+  -moz-box-flex: 1;
+  -moz-box-align: stretch;
+  background-color: var(--toolbar-bgcolor,--toolbar-non-lwt-bgcolor);
+  background-clip: padding-box;
+  border-right: 30px solid transparent;
+  border-image: linear-gradient(to left, transparent, var(--toolbar-bgcolor,--toolbar-non-lwt-bgcolor) 30px) 20 / 30px
+}
+
+#toolbar-menubar:not([inactive]){ z-index: 2 }
+#toolbar-menubar[autohide="true"][inactive] > #menubar-items {
+  opacity: 0;
+  pointer-events: none;
+  margin-left: var(--uc-window-drag-space-pre,0px)
+}
+/* Uncomment this if tabs toolbar is hidden with hide_tabs_toolbar.css */
+ /*#titlebar{ margin-bottom: -9px }*/
+
+/* Uncomment the following for compatibility with tabs_on_bottom.css - this isn't well tested though */
+/*
+:root{ --uc-titlebar-padding: 0px !important; }
+#navigator-toolbox{ flex-direction: column; display: flex; }
+#titlebar{ order: 2 }
+*/
+

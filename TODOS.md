@@ -4,4 +4,4 @@
 - [x] tmux
 - [x] zsh
 - [x] emacs
-- [ ] firefox
+- [x] firefox
