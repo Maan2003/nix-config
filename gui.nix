@@ -28,6 +28,7 @@ in {
     # fonts
     agave
     roboto-mono
+    lato # sans serif
   ];
   programs.firefox = {
     enable = false; # TODO: figure out legacy fox
