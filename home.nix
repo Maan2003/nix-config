@@ -66,6 +66,11 @@
     enableZshIntegration = true;
     options = [ "--cmd cd" ];
   };
+  programs.emacs = { enable = true; };
+  xdg.configFile.emacs = {
+    source = ./emacs;
+    recursive = true;
+  };
   home.packages = with pkgs; [
     # C++
     cmake
