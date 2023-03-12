@@ -8,12 +8,12 @@ mcd()
 
 r () {
   NAME="$1"
-  shift 1 && nix run "nixpkgs#$NAME" -- "$@"
+  shift 1 && nix run --impure "nixpkgs#$NAME" -- "$@"
 }
 
 s () {
   ARGS=("$@")
-  nix shell ${ARGS[@]/#/nixpkgs#}
+  nix shell --impure ${ARGS[@]/#/nixpkgs#}
 }
 
 typeset -A ZSH_HIGHLIGHT_STYLES
