@@ -16,6 +16,31 @@ let
       done
     '';
 in {
+  nixpkgs.overlays = [
+    (self: super: {
+      firefox = let
+        legacyFox = pkgs.fetchFromGitHub {
+          owner = "girst";
+          repo = "LegacyFox-mirror-of-git.gir.st";
+          rev = "c2ebaa3a942180370e9318661ceacf4bae55560c";
+          sha256 = "sha256-b6tl0z4wJCtYPUHxDz7F3jX97TpdHt6dcKzMKP6O1A8=";
+          sparseCheckout = [
+            "config.js"
+            "defaults/pref/config-prefs.js"
+            "legacy.manifest"
+            "legacy"
+          ];
+        };
+      in super.firefox.overrideDerivation (oldAttrs: {
+        buildCommand = oldAttrs.buildCommand + "\n" + ''
+          cat "${legacyFox}/config.js" >> "$out/lib/firefox/mozilla.cfg"
+          echo "pref("general.config.sandbox_enabled", false);" >> "$out/lib/firefox/defaults/autoconfig.js"
+          cp "${legacyFox}/legacy.manifest" "$out/lib/firefox"
+          cp -r "${legacyFox}/legacy" "$out/lib/firefox"
+        '';
+      });
+    })
+  ];
   fonts.fontconfig.enable = true;
   home.packages = with pkgs; [
     # gui
@@ -30,9 +55,7 @@ in {
     roboto-mono
     lato # sans serif
   ];
-  programs.firefox = {
-    enable = false; # TODO: figure out legacy fox
-  };
+  programs.firefox = { enable = true; };
   programs.alacritty = {
     enable = true;
     package = (nixGlWrap pkgs.alacritty);
