@@ -99,7 +99,7 @@ in {
         })
         (buildFirefoxXpiAddon {
           pname = "sponsor-block";
-          addonId = "sponsorBlocker@ajay.app";
+          addonId = "sponsorBlockerBETA@ajay.app";
           url =
             "https://github.com/ajayyy/SponsorBlock/releases/download/5.2.1/FirefoxSignedInstaller.xpi";
           sha256 = "sha256-11nJpitvXEknXSkgc8vQ9wkojJMDWsp197Cak1d0J6w=";
@@ -123,6 +123,52 @@ in {
         "browser.newtabpage.activity-stream.feeds.section.topstories" = false;
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
         "sidebar.position_start" = false; # sidebar on right side
+
+        "browser.urlbar.placeholderName.private" = "DuckDuckGo";
+        "browser.urlbar.quickactions.enabled" = true;
+        "browser.urlbar.quicksuggest.dataCollection.enabled" = true;
+        "browser.urlbar.quicksuggest.enabled" = true;
+        "browser.urlbar.quicksuggest.scenario" = "history";
+        "browser.urlbar.shortcuts.quickactions" = true;
+        "browser.urlbar.suggest.calculator" = true;
+        "browser.urlbar.suggest.engines" = false;
+
+        # sideberry icons
+        "svg.context-properties.content.enabled" = true;
+        "devtools.toolbox.host" = "window";
+        "browser.search.suggest.enabled" = false;
+        "browser.uidensity" = 1;
+
+        "browser.ctrlTab.sortByRecentlyUsed" = true;
+        "apz.gtk.kinetic_scroll.enabled" = false;
+        "browser.search.hiddenOneOffs" = "Google,Bing,Wikipedia (en)";
+        "browser.display.background_color.dark" = "#181818";
+        "browser.tabs.closeWindowWithLastTab" = false;
+        "browser.tabs.insertAfterCurrent" = true;
+        "browser.warnOnQuitShortcut" = false;
+        "full-screen-api.transition.timeout" = 0;
+        "full-screen-api.warning.delay" = 0;
+        "full-screen-api.warning.timeout" = 0;
+        "general.smoothScroll.currentVelocityWeighting" = "1.0";
+        "general.smoothScroll.msdPhysics.continuousMotionMaxDeltaMS" = 12;
+        "general.smoothScroll.msdPhysics.enabled" = true;
+        "general.smoothScroll.msdPhysics.motionBeginSpringConstant" = 200;
+        "general.smoothScroll.msdPhysics.regularSpringConstant" = 250;
+        "general.smoothScroll.msdPhysics.slowdownMinDeltaMS" = 25;
+        "general.smoothScroll.msdPhysics.slowdownMinDeltaRatio" = "2.0";
+        "general.smoothScroll.msdPhysics.slowdownSpringConstant" = 250;
+        "general.smoothScroll.stopDecelerationWeighting" = "1.0";
+        "layout.css.prefers-color-scheme.content-override" = 0;
+        "layout.css.scroll-behavior.spring-constant" = "250";
+
+        "gfx.webrender.all" = true;
+        "gfx.webrender.compositor" = true;
+        "gfx.webrender.compositor.force-enabled" = true;
+        "gfx.webrender.enabled" = true;
+        "gfx.webrender.fallback.software" = false;
+        "gfx.webrender.force-partial-present" = true;
+        "gfx.webrender.precache-shaders" = true;
+        "gfx.x11-egl.force-enabled" = true;
       };
       userChrome = builtins.readFile ./firefox/userChrome.css;
     };
