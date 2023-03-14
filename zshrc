@@ -16,6 +16,11 @@ s () {
   nix shell --impure ${ARGS[@]/#/nixpkgs#}
 }
 
+fhs () {
+  ARGS="$@"
+  nix-shell --expr "let pkgs = import <nixpkgs> {}; in (pkgs.buildFHSUserEnv { name = \"fhs\"; targetPkgs = pkgs: with pkgs; [$ARGS]; }).env"
+}
+
 typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[default]='fg=#bbbbbb'
 ZSH_HIGHLIGHT_STYLES[command]='fg=white,bold'
