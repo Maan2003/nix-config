@@ -5,6 +5,7 @@
         (oldAttrs: rec { meta = oldAttrs.meta // { priority = 15; }; });
     })
   ];
+  targets.genericLinux.enable = true;
   nix.registry.nixpkgs = {
     from = {
       id = "nixpkgs";

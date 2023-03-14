@@ -10,7 +10,6 @@
   xsession = {
     enable = true;
     scriptPath = ".xsession-hm";
-    importedVariables = [ "XCURSOR_PATH" ];
   };
   xsession.windowManager.i3 = {
     enable = true;
